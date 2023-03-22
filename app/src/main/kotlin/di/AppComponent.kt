@@ -1,6 +1,7 @@
 package di
 
 import dagger.Component
+import presentation.screens.character.CharacterListViewModel
 import presentation.screens.main.MainViewModel
 import javax.inject.Singleton
 
@@ -8,4 +9,5 @@ import javax.inject.Singleton
 @Singleton
 interface AppComponent {
     val mainViewModel: MainViewModel
+    val characterListViewModel: CharacterListViewModel
 }
