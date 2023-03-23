@@ -67,16 +67,16 @@ fun CharacterDto.toCharacter(): Character {
     }
 
     val _status = when (this.status) {
-        Status.alive.name -> Status.alive
-        Status.dead.name -> Status.dead
-        else -> Status.unknown
+        Status.Alive.name -> Status.Alive
+        Status.Dead.name -> Status.Dead
+        else -> Status.Unknown
     }
 
     val _gender = when (this.gender) {
-        Gender.female.name -> Gender.female
-        Gender.male.name -> Gender.male
-        Gender.genderless.name -> Gender.genderless
-        else -> Gender.unknown
+        Gender.Female.name -> Gender.Female
+        Gender.Male.name -> Gender.Male
+        Gender.Genderless.name -> Gender.Genderless
+        else -> Gender.Unknown
     }
 
     return Character(

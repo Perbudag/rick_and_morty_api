@@ -74,6 +74,7 @@ class RickAndMortyApi(private val client: HttpClient) {
                 host = HOST
                 path("/api/character$path")
                 if (filter != null) {
+                    if (filter.page != null) parameter("page", filter.page)
                     if (filter.name != null) parameter("name", filter.name)
                     if (filter.status != null) parameter("status", filter.status!!.name)
                     if (filter.species != null) parameter("species", filter.species)
@@ -91,6 +92,7 @@ class RickAndMortyApi(private val client: HttpClient) {
                 host = HOST
                 path("/api/location$path")
                 if (filter != null) {
+                    if (filter.page != null) parameter("page", filter.page)
                     if (filter.name != null) parameter("name", filter.name)
                     if (filter.type != null) parameter("type", filter.type)
                     if (filter.dimension != null) parameter("dimension", filter.dimension)
@@ -107,6 +109,7 @@ class RickAndMortyApi(private val client: HttpClient) {
                 host = HOST
                 path("/api/episode$path")
                 if (filter != null) {
+                    if (filter.page != null) parameter("page", filter.page)
                     if (filter.name != null) parameter("name", filter.name)
                     if (filter.episode != null) parameter("episode", filter.episode)
                 }

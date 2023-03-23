@@ -1,8 +1,8 @@
 package domain.models
 
 enum class Gender {
-    female,
-    male,
-    genderless ,
-    unknown
+    Female,
+    Male,
+    Genderless ,
+    Unknown
 }

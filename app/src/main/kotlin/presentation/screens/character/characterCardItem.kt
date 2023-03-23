@@ -5,11 +5,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.onClick
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -23,7 +21,11 @@ import domain.models.Status
 
 @Composable
 fun characterCardItem(
-    image: Painter, name: String, status: Status, type: String, onClick: () -> Unit
+    image: Painter,
+    name: String,
+    status: Status,
+    species: String,
+    onClick: () -> Unit
 ) {
     val textColor = Color.White
 
@@ -67,16 +69,16 @@ fun characterCardItem(
                 modifier = Modifier.padding(bottom = 5.dp)
             ) {
                 val statusColor = when (status) {
-                    Status.alive -> Color.Green
-                    Status.dead -> Color.Red
-                    Status.unknown -> Color.Yellow
+                    Status.Alive -> Color.Green
+                    Status.Dead -> Color.Red
+                    Status.Unknown -> Color.Yellow
                 }
 
                 Text(
                     text = "● ", color = statusColor
                 )
                 Text(
-                    text = "${status.name.capitalize()} - $type",
+                    text = "${status.name} - $species",
                     color = textColor
                 )
             }
@@ -89,8 +91,8 @@ fun characterCardItem(
 fun characterCardItemPreview() {
     characterCardItem(
         image = painterResource("2.png"),
-        name = "Mr. Needful", status = Status.unknown,
-        type = "Humanoid"
+        name = "Mr. Needful", status = Status.Unknown,
+        species = "Humanoid"
     ) {
 
     }

@@ -9,6 +9,7 @@ import domain.repository.filters.CharacterFilter
 class GetAllCharactersUseCase(private val repository: RickAndMortyRepository) {
 
     suspend operator fun invoke(
+        page: Int? = null,
         name: String? = null,
         status: Status? = null,
         species: String? = null,
@@ -17,6 +18,7 @@ class GetAllCharactersUseCase(private val repository: RickAndMortyRepository) {
     ): List<Character> {
         return repository.getAllCharacters(
             CharacterFilter(
+                page = page,
                 name = name,
                 status = status,
                 species = species,
